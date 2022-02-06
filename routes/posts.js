@@ -1,12 +1,13 @@
 import express from "express";
 
-import { getPosts, createPost } from "../controllers/posts.js";
+import { getPosts, createPost, updatePost } from "../controllers/posts.js";
 
 const router = express.Router();
 
 //like "http://localhost:5000/posts"
 router.get("/", getPosts);
 router.post("/", createPost);
+router.patch("/:id", updatePost); //patch is used to update in the exixting.
 
 export default router;
 
